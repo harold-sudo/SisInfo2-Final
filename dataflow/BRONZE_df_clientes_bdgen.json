@@ -1,0 +1,54 @@
+{
+	"name": "BRONZE_df_clientes_bdgen",
+	"properties": {
+		"folder": {
+			"name": "BRONZE"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "clientes_bdgen_csv",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "clientes_bdgen_csv",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          CID as string,",
+				"          BDATE as string,",
+				"          GEN as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          CID as string,",
+				"          BDATE as string,",
+				"          GEN as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          CID,",
+				"          BDATE,",
+				"          GEN",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}

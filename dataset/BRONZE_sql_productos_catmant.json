@@ -1,0 +1,36 @@
+{
+	"name": "BRONZE_sql_productos_catmant",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_dw_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "BRONZE"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "cat",
+				"type": "varchar"
+			},
+			{
+				"name": "subcat",
+				"type": "varchar"
+			},
+			{
+				"name": "maintenance",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "BRONZE",
+			"table": "PRODUCTOS_CATEGORIAS"
+		}
+	}
+}
