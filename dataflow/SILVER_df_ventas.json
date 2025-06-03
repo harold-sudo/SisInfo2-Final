@@ -41,7 +41,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     query: 'SELECT \\r\\n    sls_ord_num,\\r\\n    sls_prd_key,\\r\\n    TRY_CAST(sls_cust_id AS INT) AS sls_cust_id,\\r\\n    TRY_CAST(sls_sales AS DECIMAL(10,2)) AS sls_sales,\\r\\n    TRY_CAST(sls_quantity AS INT) AS sls_quantity,\\r\\n    TRY_CAST(sls_price AS DECIMAL(10,2)) AS sls_price\\r\\nFROM BRONZE.VENTAS',",
+				"     query: 'select sls_ord_num, sls_prd_key, sls_cust_id, sls_sales, sls_quantity, sls_price\\r\\nfrom BRONZE.VENTAS',",
 				"     format: 'query') ~> source1",
 				"source1 cast(output(",
 				"          sls_cust_id as integer,",

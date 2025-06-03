@@ -41,7 +41,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     query: 'SELECT \\r\\n    cst_id,\\r\\n    cst_key,\\r\\n    cst_firstname,\\r\\n    cst_lastname\\r\\nFROM BRONZE.CLIENTES',",
+				"     query: 'select cst_id, cst_key, cst_firstname, cst_lastname\\r\\nfrom BRONZE.CLIENTES',",
 				"     format: 'query') ~> source1",
 				"source1 cast(output(",
 				"          cst_id as integer",

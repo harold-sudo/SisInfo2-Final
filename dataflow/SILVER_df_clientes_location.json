@@ -37,7 +37,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     query: 'SELECT \\r\\n    cid,\\r\\n    cntry\\r\\nFROM BRONZE.CLIENTES_LOCATION',",
+				"     query: 'select *\\r\\nfrom BRONZE.CLIENTES_LOCATION',",
 				"     format: 'query') ~> source1",
 				"source1 cast(output(",
 				"          cid as integer,",
