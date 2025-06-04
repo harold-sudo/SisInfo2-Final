@@ -1,0 +1,25 @@
+{
+	"name": "GOLD_dim_clientes",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_dw_ventas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "GOLD"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "cst_id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "GOLD",
+			"table": "DIM_CLIENTES"
+		}
+	}
+}
